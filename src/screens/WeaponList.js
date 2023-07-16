@@ -17,6 +17,7 @@ const WeaponList = ({ navigation }) => {
         navigation.navigate("ItemDescription")
     }
 
+
     return (
         <ImageBackground
             style={styles.IMGBG}

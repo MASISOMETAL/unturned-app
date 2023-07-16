@@ -21,6 +21,7 @@ const WeaponsScreen = ({ navigation }) => {
     const dispatch = useDispatch();
     const weaponRanged = useSelector((state) => state.weaponRoot.ranged)
     const weaponMelee = useSelector((state) => state.weaponRoot.melee)
+    const weaponMagazines = useSelector((state)=> state.weaponRoot.magazines)
 
     const onHandleSelectScreen = (type) => {
         switch (type) {
@@ -30,6 +31,10 @@ const WeaponsScreen = ({ navigation }) => {
                 return;
             case "ranged":
                 dispatch(ItemSelected(weaponRanged))
+                navigation.navigate("WeaponsList");
+                return;
+            case "magazines":
+                dispatch(ItemSelected(weaponMagazines))
                 navigation.navigate("WeaponsList");
                 return;
             default:
@@ -60,6 +65,7 @@ const WeaponsScreen = ({ navigation }) => {
                     </TouchableOpacity>
                     <TouchableOpacity
                         style={styles.btn}
+                        onPress={() => onHandleSelectScreen("magazines")}
                     >
                         <Text style={styles.btnText}>Magazines</Text>
                     </TouchableOpacity>

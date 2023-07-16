@@ -90,6 +90,24 @@ const ItemDescriptions = ({ navigation }) => {
                     </View>
                 </View>
 
+                {ItemDescription.capacity && <View style={styles.containerRow}>
+                    <View style={styles.box1}>
+                        <Text style={styles.textTagDescription}>Capacity: </Text>
+                    </View>
+                    <View style={styles.box2}>
+                        <Text style={styles.textDescription}>{ItemDescription.capacity}</Text>
+                    </View>
+                </View>}
+
+                {ItemDescription.refill && <View style={styles.containerRow}>
+                    <View style={styles.box1}>
+                        <Text style={styles.textTagDescription}>Refill: </Text>
+                    </View>
+                    <View style={styles.box2}>
+                        <Text style={styles.textDescription}>{ItemDescription.refill}</Text>
+                    </View>
+                </View>}
+
                 {ItemDescription.magazineType && <View style={styles.containerRow}>
                     <View style={styles.box1}>
                         <Text style={[styles.textTagDescription, {fontSize: 15}]}>Magazine type: </Text>
